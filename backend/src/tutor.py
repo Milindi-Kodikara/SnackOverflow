@@ -2,7 +2,7 @@ class Tutor:
     """Tutor class object  to input into the data base
     """
     def __init__(self, tutor_id:str,firstName:str,lastName: str,hourlyRate:float,learningMode:str, location:str, email:str, phoneNum:str,avgRating:int,biography:str, subjects:list, yrLevels: list, volunteer:bool):
-        self.tutor_id
+        self.tutor_id = tutor_id
         self.firstName = firstName 
         self.lastName = lastName
         self.hourlyRate = hourlyRate
