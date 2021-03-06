@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* Argon Design System React - v1.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-design-system-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-design-system-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 
 // reactstrap components
@@ -26,18 +9,20 @@ import {
   Col,
   Container,
   Form,
-  FormGroup,
-  Input,
+  FormGroup, Input,
   InputGroup,
-  InputGroupAddon,
-  InputGroupText,
+  InputGroupAddon, InputGroupText,
   Row
 } from "reactstrap";
-
+import logo from '../../assets/img/logo.svg'
 // core components
-import SimpleFooter from "components/Footers/SimpleFooter.js";
+import {loginWithGoogle, useSession} from "../../components/GlobalContext";
+import {Redirect} from "react-router";
+import SimpleFooter from "../../components/Footers/SimpleFooter";
 
-function Register() {
+
+export default function AddPhone() {
+  const user=useSession();
   return (
       <>
         <main>
@@ -48,7 +33,7 @@ function Register() {
                   <Card className="bg-secondary shadow border-0">
                     <CardHeader className="bg-white pb-5">
                       <div className="text-muted text-center mb-3">
-                        <h4>Sign up with</h4>
+                        <small>Sign up with</small>
                       </div>
                       <div className="text-center">
                         <Button
@@ -173,6 +158,6 @@ function Register() {
         <SimpleFooter/>
       </>
   );
+
 }
 
-export default Register;

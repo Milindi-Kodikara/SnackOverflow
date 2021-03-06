@@ -25,12 +25,18 @@ import "assets/scss/argon-design-system-react.scss?v1.1.0";
 
 import Index from "views/Index.js";
 import Landing from "views/examples/Landing.js";
-import Login from "views/examples/Login.js";
+import Login from "views/main/Login.js";
 import Profile from "views/examples/Profile.js";
 import Register from "views/examples/Register.js";
+import {GlobalContextProvider} from "./components/GlobalContext";
+import TutorSearch from "./views/main/TutorSearch";
+import DemoNavbar from "./components/Navbar";
+import AddPhone from "./views/main/AddPhone";
 
 ReactDOM.render(
   <BrowserRouter>
+    <GlobalContextProvider>
+        <DemoNavbar/>
     <Switch>
       <Route path="/" exact render={props => <Index {...props} />} />
       <Route
@@ -38,7 +44,7 @@ ReactDOM.render(
         exact
         render={props => <Landing {...props} />}
       />
-      <Route path="/login-page" exact render={props => <Login {...props} />} />
+      <Route path="/login-page" exact component={Login} />
       <Route
         path="/profile-page"
         exact
@@ -49,8 +55,11 @@ ReactDOM.render(
         exact
         render={props => <Register {...props} />}
       />
+      <Route path='/tutors' component={TutorSearch} />
+      <Route path='/add-phone' component={AddPhone}/>
       <Redirect to="/" />
     </Switch>
+    </GlobalContextProvider>
   </BrowserRouter>,
   document.getElementById("root")
 );
