@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_restful import Resource, Api
+from flask.ext.restful import (reqparse, abort, fields, marshal_with,marshal)
 from firebase_util import firebase
 from datetime import datetime, date
 import json
@@ -14,14 +15,18 @@ class HelloWorld(Resource):
         return {'hello': 'world'}
 
 class Twilio(Resource):
-    def get(self,search_term): 
+    def get(self,search_term,student_id,tutor_id,tute_datetime): 
         print(search_term)
-        if search_term == 'bob':
-            firebase.database().child('students').child(search_term)
+        print(tutor_id)
+        print(tute_datetime)
+        if search_term == 'remind-session':
+            user = db. # Read user with id
+            tutor = db. # Read tutor with id
+            #firebase.database().child('students').child(search_term)
             return {'hello': search_term}
 
 api.add_resource(HelloWorld, '/')
-api.add_resource(Twilio, '/twilio/<search_term>')
+api.add_resource(Twilio, '/<search_term>/<student_id>/<tutor_id>/<tute_datetime>')
 
 
 """Premade tutors in the 'tutor' realtime firebase database"""
