@@ -26,17 +26,17 @@ api.add_resource(Twilio, '/twilio/<search_term>')
 
 """Premade tutors in the 'tutor' realtime firebase database"""
 
-tut= Tutor('Phara','Tut','misstut@hotmail.com',"+61481893345",5,
+tut= Tutor("Phara","Tut", 35.0,"remote", "Carlton", "misstut@hotmail.com","+61481893345",5,
 "An enthustiastic and knowledgeable maths tutor. Prior expereince at Melbourne High School.", 
-["Maths", "Methods", "Specialist", "Further"], [10,11,12])
+["Maths", "Methods", "Specialist", "Further"], [10,11,12], False)
 
-ben= Tutor('Ben','Cash','bcash88@gmail.com',"+61482293045",1,
+ben= Tutor('Ben','Cash',10.0,"remote","Clayton", 'bcash88@gmail.com',"+61482293045",1,
 "Highest scoring student at Jon Monash High School 2019. Currently studying Bachelor of Computer Science at Monash University.", 
-["History"], [7,8])
+["History"], [7,8], False)
 
-candice= Tutor('Candice','Wong','candicewong88@gmail.com',"+61432191045",4,
+candice= Tutor('Candice','Wong',25.0, "in person","Epping",'candicewong88@gmail.com',"+61432191045",4,
 "Passionate about literature and story telling. Poet laureate.", 
-["English"], [7,8,9,10,11,12])
+["English"], [7,8,9,10,11,12], True)
 
 
 
