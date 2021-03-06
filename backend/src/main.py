@@ -7,6 +7,7 @@ import json
 from tutor import Tutor
 
 import twiliow_booking_sms as sms
+from twilio_booking_sms import create_message
 import twilioServices as tws
 
 app = Flask(__name__)
@@ -18,23 +19,26 @@ class HelloWorld(Resource):
         return {'hello': 'world'}
 
 class Twilio(Resource):
-    def get(self,search_term,student_id,tutor_id,tute_datetime): 
+    
+    def get(self,search_term,student_id,subject,tutor_id,tute_datetime): 
+        parameters = {"Invalid booking"}
         print(search_term)
         print(tutor_id)
         print(tute_datetime)
         if search_term == 'remind-session':
             student = db.child('students').child(student_id)
             tutor = db.child('tutors').child(tutor_id)
-            # Read user with id
-            # tutor = db. # Read tutor with id
             #firebase.database().child('students').child(search_term)
-            return {'student': student_id,'tutor': tutor_id, 'date': tute_datetime}
+            create_message(student.get(student_id), subject, tutor.get(tutor_id), tute_datetime, tutor.get('phoneNum') 
+            parameters = {'student': student_id,'tutor': tutor_id, 'date': tute_datetime}
         else: 
-            return "Invalid booking!"
+            #infalid booking
+    return parameters
 
 api.add_resource(HelloWorld, '/')
-api.add_resource(Twilio, '/<search_term>/<student_id>/<tutor_id>/<tute_datetime>')
-tws.send_message(tws, Twilio.get('student'),Twilio.get()
+api.add_resource(Twilio, '/<search_term>/<student_id>/<subject>/<tutor_id>/<tute_datetime>')
+
+#tws.send_message(tws, Twilio.get('student'),Twilio.get()
 
 
 
@@ -65,9 +69,11 @@ if __name__ == '__main__':
     #     "gender": "Male", 
     #     "location": "Carlton", 
     #     "disadvantaged": False}
+    # db.child("students").push(data)
     # db.child("tutors").push(tut.__dict__)
     # db.child("tutors").push(ben.__dict__)
     # db.child("tutors").push(candice.__dict__)
+    
 
     
    
