@@ -19,6 +19,8 @@ import logo from '../../assets/img/logo.svg'
 import {loginWithGoogle, useSession} from "../../components/GlobalContext";
 import {Redirect} from "react-router";
 import SimpleFooter from "../../components/Footers/SimpleFooter";
+import {ReactComponent as RegisterImg} from '../../assets/img/register.svg';
+import '../../assets/css/animation-register.css';
 
 
 export default function AddPhone() {
@@ -28,6 +30,9 @@ export default function AddPhone() {
         <main>
           <section className="section section-shaped section-lg">
             <Container className="pt-lg-7">
+              <Row className="justify-content-center">
+                <RegisterImg/>
+              </Row>
               <Row className="justify-content-center">
                 <Col lg="5">
                   <Card className="bg-secondary shadow border-0">
