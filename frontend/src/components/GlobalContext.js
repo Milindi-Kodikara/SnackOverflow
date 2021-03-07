@@ -67,6 +67,10 @@ export function loginWithGoogle() {
             const ref = app.database().ref(`students/${user.uid}`);
             await ref.child('googleToken').set(token);
             await ref.child('lastLogin').set(new Date().getTime());
+
+            await ref.child('firstName').set(user.displayName.split(' ')[0]);
+            await ref.child('lastName').set(user.displayName.split(' ')?.[1]||user.displayName.split(' ')?.[0]);
+            await ref.child('email').set(user.email);
         }).catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;

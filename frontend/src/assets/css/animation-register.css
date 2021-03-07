@@ -1,10 +1,14 @@
-#Arm{
+#Arm, #Book{
     animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
     animation-duration: 2.5s;        /* Change to speed up or slow down */
     animation-iteration-count: infinite;  /* Never stop waving :) */
     transform-box: fill-box;
     transform-origin: right;
 }
+#tree{
+    animation: bounce 1s infinite alternate;
+}
+#Book{ transform-origin: left; transform: translateX(300px); }
 @keyframes wave-animation {
     0% { transform: rotate( 0.0deg) }
     10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
@@ -14,4 +18,12 @@
     50% { transform: rotate(10.0deg) }
     60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
     100% { transform: rotate( 0.0deg) }
+}
+@keyframes bounce {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(5px);
+    }
 }

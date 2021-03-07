@@ -38,11 +38,11 @@ ReactDOM.render(
     <GlobalContextProvider>
         <DemoNavbar/>
     <Switch>
-      <Route path="/" exact render={props => <Index {...props} />} />
+      <Route path="/examples" exact render={props => <Index {...props} />} />
       <Route
-        path="/landing-page"
+        path="/"
         exact
-        render={props => <Landing {...props} />}
+        component={Landing}
       />
       <Route path="/login-page" exact component={Login} />
       <Route

@@ -23,9 +23,11 @@ import {
     UncontrolledTooltip
 } from "reactstrap";
 import {useSession} from "./GlobalContext";
+import {useHistory} from 'react-router-dom';
 
 function DemoNavbar() {
     const user = useSession();
+    const history=useHistory();
     useEffect(() => {
         let headroom = new Headroom(document.getElementById("navbar-main"));
         // initialise
@@ -207,7 +209,7 @@ function DemoNavbar() {
                                     </NavLink><Button
                                             className="btn-neutral btn-icon"
                                             color="default"
-                                            onClick={()=>{app.auth().signOut()}}
+                                            onClick={()=>{app.auth().signOut(); history.push('/')}}
                                         >
 
                                             <span className="nav-link-inner--text ml-1">
