@@ -1,14 +1,16 @@
 import React from 'react';
 import {useSession} from "../../components/GlobalContext";
-import {Redirect} from "react-router";
+import {useHistory} from "react-router";
 
 export default function TutorSearch(props) {
     const user = useSession();
-    console.log(user?.db?.phoneNumber)
+    const history = useHistory();
+
+    if (user?.db && !user?.db?.phoneNumber) {
+        history.push('/add-phone');
+    }
     return (
         <>
-            {!user?.db?.phoneNumber && <Redirect to={'/add-phone'}/>}
-
 
         </>
     );

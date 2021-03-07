@@ -361,11 +361,9 @@ function Landing(){
             <Container>
               <Row className="justify-content-center text-center mb-lg">
                 <Col lg="8">
-                  <h2 className="display-3">The amazing Team</h2>
+                  <h2 className="display-3">The amazing team</h2>
                   <p className="lead text-muted">
-                    According to the National Oceanic and Atmospheric
-                    Administration, Ted, Scambos, NSIDClead scentist, puts the
-                    potentially record maximum.
+                    Meet the team making this all possible
                   </p>
                 </Col>
               </Row>
@@ -383,32 +381,7 @@ function Landing(){
                         <span className="d-block mb-1">Ryan Tompson</span>
                         <small className="h6 text-muted">Web Developer</small>
                       </h5>
-                      <div className="mt-3">
-                        <Button
-                            className="btn-icon-only rounded-circle"
-                            color="warning"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-twitter" />
-                        </Button>
-                        <Button
-                            className="btn-icon-only rounded-circle ml-1"
-                            color="warning"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-facebook" />
-                        </Button>
-                        <Button
-                            className="btn-icon-only rounded-circle ml-1"
-                            color="warning"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-dribbble" />
-                        </Button>
-                      </div>
+
                     </div>
                   </div>
                 </Col>
@@ -427,32 +400,7 @@ function Landing(){
                           Marketing Strategist
                         </small>
                       </h5>
-                      <div className="mt-3">
-                        <Button
-                            className="btn-icon-only rounded-circle"
-                            color="primary"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-twitter" />
-                        </Button>
-                        <Button
-                            className="btn-icon-only rounded-circle ml-1"
-                            color="primary"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-facebook" />
-                        </Button>
-                        <Button
-                            className="btn-icon-only rounded-circle ml-1"
-                            color="primary"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-dribbble" />
-                        </Button>
-                      </div>
+
                     </div>
                   </div>
                 </Col>
@@ -469,32 +417,7 @@ function Landing(){
                         <span className="d-block mb-1">Alexander Smith</span>
                         <small className="h6 text-muted">UI/UX Designer</small>
                       </h5>
-                      <div className="mt-3">
-                        <Button
-                            className="btn-icon-only rounded-circle"
-                            color="info"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-twitter" />
-                        </Button>
-                        <Button
-                            className="btn-icon-only rounded-circle ml-1"
-                            color="info"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-facebook" />
-                        </Button>
-                        <Button
-                            className="btn-icon-only rounded-circle ml-1"
-                            color="info"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-dribbble" />
-                        </Button>
-                      </div>
+                      
                     </div>
                   </div>
                 </Col>
