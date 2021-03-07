@@ -1,4 +1,11 @@
-import pyrebase
+import firebase_admin
+from firebase_admin import credentials
+import os 
+dirname = os.path.dirname(__file__)
+
+
+cred = credentials.Certificate(os.path.join(dirname,'cred.json'))
+
 
 config = {
     "apiKey": "AIzaSyAmuMf08kNMifi0_Nm2xdqI4jgnmO6UW0U",
@@ -10,4 +17,6 @@ config = {
     "databaseURL": "https://tutebite-b1258-default-rtdb.firebaseio.com/"
 }
 
-firebase = pyrebase.initialize_app(config)
+firebase = firebase_admin.initialize_app(cred,config)
+
+
