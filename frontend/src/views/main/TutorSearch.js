@@ -7,7 +7,8 @@ export default function TutorSearch(props) {
     return (
         <>
             {!user?.db?.phoneNumber && <Redirect to={'/add-phone'}/>}
-            <div>awd</div>
+            
+
         </>
     );
 }

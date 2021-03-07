@@ -28,6 +28,8 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 // index page sections
 import Download from "../IndexSections/Download.js";
 import {ReactComponent as Logo} from "../../assets/img/logo.svg";
+import DemoNavbar from "../../components/Navbar";
+import SimpleFooter from "../../components/Footers/SimpleFooter";
 
 function Landing(){
   const [nameFocused,setNameFocused] = useState(false);
@@ -50,7 +52,7 @@ function Landing(){
                         }}>Hungry for Knowledge</span>
                       </h1>
                       <p className="lead text-white">
-                        TuteBite is designed to match you up with a tutor
+                        Our mission is to ensure every student in Australia, no matter their background, or circumstance, can gain access to quality education.
                       </p>
                       <div className="btn-wrapper">
                         <Button
@@ -111,33 +113,22 @@ function Landing(){
                           <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
                             <i className="ni ni-check-bold" />
                           </div>
-                          <h6 className="text-primary text-uppercase">
-                            Download Argon
+                          <h6 className="text-primary">
+                            Find tutors wherever, whenever
                           </h6>
                           <p className="description mt-3">
-                            Argon is a great free UI package based on Bootstrap
-                            4 that includes the most important components and
-                            features.
+                            No matter where you are or what are or how busy your schedule is, our filtering system will help you find tutors
+                            who fit within your schedule
                           </p>
-                          <div>
-                            <Badge color="primary" pill className="mr-1">
-                              design
-                            </Badge>
-                            <Badge color="primary" pill className="mr-1">
-                              system
-                            </Badge>
-                            <Badge color="primary" pill className="mr-1">
-                              creative
-                            </Badge>
-                          </div>
+                          <Link to='/login-page'>
                           <Button
                               className="mt-4"
                               color="primary"
                               href="#pablo"
-                              onClick={e => e.preventDefault()}
+
                           >
-                            Learn more
-                          </Button>
+                            Sign up
+                          </Button></Link>
                         </CardBody>
                       </Card>
                     </Col>
@@ -147,33 +138,21 @@ function Landing(){
                           <div className="icon icon-shape icon-shape-success rounded-circle mb-4">
                             <i className="ni ni-istanbul" />
                           </div>
-                          <h6 className="text-success text-uppercase">
-                            Build Something
+                          <h6 className="text-success">
+                            Access to quality education
                           </h6>
                           <p className="description mt-3">
-                            Argon is a great free UI package based on Bootstrap
-                            4 that includes the most important components and
-                            features.
+                            You cannot guarantee you receive education that helps you learn and grow as an individual. With access to our vast network
+                            of tutors and our advanced filtering system, we can guarantee you find tutors who can deliver quality lessons tailored to you.
                           </p>
-                          <div>
-                            <Badge color="success" pill className="mr-1">
-                              business
-                            </Badge>
-                            <Badge color="success" pill className="mr-1">
-                              vision
-                            </Badge>
-                            <Badge color="success" pill className="mr-1">
-                              success
-                            </Badge>
-                          </div>
+
+                          <Link to='login-page'>
                           <Button
                               className="mt-4"
                               color="success"
-                              href="#pablo"
-                              onClick={e => e.preventDefault()}
                           >
-                            Learn more
-                          </Button>
+                            Become a tutor
+                          </Button></Link>
                         </CardBody>
                       </Card>
                     </Col>
@@ -187,29 +166,16 @@ function Landing(){
                             Disadvantaged? We're here for you <i className="fa fa-heart" />
                           </h6>
                           <p className="description mt-3">
-                            Argon is a great free UI package based on Bootstrap
-                            4 that includes the most important components and
-                            features.
+                            Not everyone can gain access to quality education. Maybe they are financially disadvantaged, or live in a rural town with lackluster educational services.
+                            That is why it is our mission to offer disadvantaged students access to free education, so they can access their future potential.
                           </p>
-                          <div>
-                            <Badge color="warning" pill className="mr-1">
-                              marketing
-                            </Badge>
-                            <Badge color="warning" pill className="mr-1">
-                              product
-                            </Badge>
-                            <Badge color="warning" pill className="mr-1">
-                              launch
-                            </Badge>
-                          </div>
+                          <Link to='/login-page'>
                           <Button
                               className="mt-4"
                               color="warning"
-                              href="#pablo"
-                              onClick={e => e.preventDefault()}
                           >
-                            Learn more
-                          </Button>
+                           <i className={'fa fa-heart'}/> Become a volunteer
+                          </Button></Link>
                         </CardBody>
                       </Card>
                     </Col>
@@ -233,12 +199,8 @@ function Landing(){
                     <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
                       <i className="ni ni-settings-gear-65" />
                     </div>
-                    <h3>Awesome features</h3>
-                    <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
-                    </p>
+                    <h3>We want to transform how students learn online</h3>
+                    <p>We understand that education has become harder as </p>
                     <ul className="list-unstyled mt-5">
                       <li className="py-2">
                         <div className="d-flex align-items-center">
@@ -295,77 +257,7 @@ function Landing(){
               </Row>
             </Container>
           </section>
-          <section className="section bg-secondary">
-            <Container>
-              <Row className="row-grid align-items-center">
-                <Col md="6">
-                  <Card className="bg-default shadow border-0">
-                    <CardImg
-                        alt="..."
-                        src={require("assets/img/theme/img-1-1200x1000.jpg")}
-                        top
-                    />
-                    <blockquote className="card-blockquote">
-                      <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="svg-bg"
-                          preserveAspectRatio="none"
-                          viewBox="0 0 583 95"
-                      >
-                        <polygon
-                            className="fill-default"
-                            points="0,52 583,95 0,95"
-                        />
-                        <polygon
-                            className="fill-default"
-                            opacity=".2"
-                            points="0,42 583,95 683,0 0,95"
-                        />
-                      </svg>
-                      <h4 className="display-3 font-weight-bold text-white">
-                        Design System
-                      </h4>
-                      <p className="lead text-italic text-white">
-                        The Arctic Ocean freezes every winter and much of the
-                        sea-ice then thaws every summer, and that process will
-                        continue whatever happens.
-                      </p>
-                    </blockquote>
-                  </Card>
-                </Col>
-                <Col md="6">
-                  <div className="pl-md-5">
-                    <div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
-                      <i className="ni ni-settings" />
-                    </div>
-                    <h3>Our customers</h3>
-                    <p className="lead">
-                      Don't let your uses guess by attaching tooltips and
-                      popoves to any element. Just make sure you enable them
-                      first via JavaScript.
-                    </p>
-                    <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
-                    </p>
-                    <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
-                    </p>
-                    <a
-                        className="font-weight-bold text-warning mt-5"
-                        href="#pablo"
-                        onClick={e => e.preventDefault()}
-                    >
-                      A beautiful UI Kit for impactful websites
-                    </a>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </section>
+
           <section className="section pb-0 bg-gradient-warning">
             <Container>
               <Row className="row-grid align-items-center">
@@ -827,7 +719,7 @@ function Landing(){
           </section>
           <Download />
         </main>
-        <CardsFooter />
+        <SimpleFooter />
       </>
   );
 
