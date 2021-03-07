@@ -35,7 +35,7 @@ export const useAuth = () => {
 
     function onChange(user) {
         setState({initializing: false, user});
-        if (user.uid)
+        if (user?.uid)
             app.database().ref(`students/${user.uid}`).get().then(res => {
                 const obj = res.toJSON();
                 setState({initializing: false, user: {...user, db: obj}});
@@ -49,7 +49,7 @@ export const useAuth = () => {
         return () => unsubscribe()
     }, [])
 
-    return state
+    return {...state,onChange}
 }
 const googleProvider = new app.auth.GoogleAuthProvider();
 

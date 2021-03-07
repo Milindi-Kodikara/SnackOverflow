@@ -204,9 +204,9 @@ function DemoNavbar() {
                                     </UncontrolledTooltip>
                                 </NavItem>
                                 <NavItem className="d-lg-block ml-lg-4">
-                                    {user ? <div style={{display: 'flex'}}><NavLink><span className="nav-link-inner--text">
+                                    {user ? <div style={{display: 'flex'}}><Link to='/tutors'><NavLink><span className="nav-link-inner--text">
                                             <img src={user.photoURL} alt={'profile'} style={{height:25, marginRight: 10}}/>{user.displayName}</span>
-                                    </NavLink><Button
+                                    </NavLink></Link><Button
                                             className="btn-neutral btn-icon"
                                             color="default"
                                             onClick={()=>{app.auth().signOut(); history.push('/')}}
