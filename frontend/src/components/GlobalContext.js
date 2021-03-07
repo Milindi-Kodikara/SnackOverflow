@@ -16,6 +16,13 @@ app.initializeApp({
 
 const context = createContext({user: null});
 export default context;
+
+export function GlobalContextProvider({children}) {
+    const userState = useAuth();
+
+    return <context.Provider value={{...userState}}>{children}</context.Provider>
+}
+
 export const useSession = () => {
     const {user} = useContext(context);
     return user
@@ -27,7 +34,12 @@ export const useAuth = () => {
     })
 
     function onChange(user) {
-        setState({initializing: false, user})
+        setState({initializing: false, user});
+        if (user?.uid)
+            app.database().ref(`students/${user.uid}`).get().then(res => {
+                const obj = res.toJSON();
+                setState({initializing: false, user: {...user, db: obj}});
+            });
     }
 
     useEffect(() => {
@@ -37,7 +49,7 @@ export const useAuth = () => {
         return () => unsubscribe()
     }, [])
 
-    return state
+    return {...state,onChange}
 }
 const googleProvider = new app.auth.GoogleAuthProvider();
 
@@ -52,7 +64,13 @@ export function loginWithGoogle() {
             const token = credential.accessToken;
             // The signed-in user info.
             const user = result.user;
-            await app.database().ref(`students/${user.uid}`).set({googleToken: token, foo: 5});
+            const ref = app.database().ref(`students/${user.uid}`);
+            await ref.child('googleToken').set(token);
+            await ref.child('lastLogin').set(new Date().getTime());
+
+            await ref.child('firstName').set(user.displayName.split(' ')[0]);
+            await ref.child('lastName').set(user.displayName.split(' ')?.[1]||user.displayName.split(' ')?.[0]);
+            await ref.child('email').set(user.email);
         }).catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;

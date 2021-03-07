@@ -21,78 +21,60 @@ import React from "react";
 import {
   Button,
   Card,
-  CardHeader,
   CardBody,
-  FormGroup,
+  CardHeader,
+  Col,
+  Container,
   Form,
+  FormGroup,
   Input,
+  InputGroup,
   InputGroupAddon,
   InputGroupText,
-  InputGroup,
-  Container,
-  Row,
-  Col
+  Row
 } from "reactstrap";
 
 // core components
-import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import SimpleFooter from "components/Footers/SimpleFooter.js";
 
-class Register extends React.Component {
-  componentDidMount() {
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-    this.refs.main.scrollTop = 0;
-  }
-  render() {
-    return (
+function Register() {
+  return (
       <>
-        <DemoNavbar />
-        <main ref="main">
+        <main>
           <section className="section section-shaped section-lg">
-            <div className="shape shape-style-1 bg-gradient-default">
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-              <span />
-            </div>
             <Container className="pt-lg-7">
               <Row className="justify-content-center">
                 <Col lg="5">
                   <Card className="bg-secondary shadow border-0">
                     <CardHeader className="bg-white pb-5">
                       <div className="text-muted text-center mb-3">
-                        <small>Sign up with</small>
+                        <h4>Sign up with</h4>
                       </div>
                       <div className="text-center">
                         <Button
-                          className="btn-neutral btn-icon mr-4"
-                          color="default"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
+                            className="btn-neutral btn-icon mr-4"
+                            color="default"
+                            href="#pablo"
+                            onClick={e => e.preventDefault()}
                         >
                           <span className="btn-inner--icon mr-1">
                             <img
-                              alt="..."
-                              src={require("assets/img/icons/common/github.svg")}
+                                alt="..."
+                                src={require("assets/img/icons/common/github.svg")}
                             />
                           </span>
                           <span className="btn-inner--text">Github</span>
                         </Button>
                         <Button
-                          className="btn-neutral btn-icon ml-1"
-                          color="default"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
+                            className="btn-neutral btn-icon ml-1"
+                            color="default"
+                            href="#pablo"
+                            onClick={e => e.preventDefault()}
                         >
                           <span className="btn-inner--icon mr-1">
                             <img
-                              alt="..."
-                              src={require("assets/img/icons/common/google.svg")}
+                                alt="..."
+                                src={require("assets/img/icons/common/google.svg")}
                             />
                           </span>
                           <span className="btn-inner--text">Google</span>
@@ -108,33 +90,33 @@ class Register extends React.Component {
                           <InputGroup className="input-group-alternative mb-3">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
-                                <i className="ni ni-hat-3" />
+                                <i className="ni ni-hat-3"/>
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Name" type="text" />
+                            <Input placeholder="Name" type="text"/>
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
                           <InputGroup className="input-group-alternative mb-3">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
-                                <i className="ni ni-email-83" />
+                                <i className="ni ni-email-83"/>
                               </InputGroupText>
                             </InputGroupAddon>
-                            <Input placeholder="Email" type="email" />
+                            <Input placeholder="Email" type="email"/>
                           </InputGroup>
                         </FormGroup>
                         <FormGroup>
                           <InputGroup className="input-group-alternative">
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
-                                <i className="ni ni-lock-circle-open" />
+                                <i className="ni ni-lock-circle-open"/>
                               </InputGroupText>
                             </InputGroupAddon>
                             <Input
-                              placeholder="Password"
-                              type="password"
-                              autoComplete="off"
+                                placeholder="Password"
+                                type="password"
+                                autoComplete="off"
                             />
                           </InputGroup>
                         </FormGroup>
@@ -150,19 +132,19 @@ class Register extends React.Component {
                           <Col xs="12">
                             <div className="custom-control custom-control-alternative custom-checkbox">
                               <input
-                                className="custom-control-input"
-                                id="customCheckRegister"
-                                type="checkbox"
+                                  className="custom-control-input"
+                                  id="customCheckRegister"
+                                  type="checkbox"
                               />
                               <label
-                                className="custom-control-label"
-                                htmlFor="customCheckRegister"
+                                  className="custom-control-label"
+                                  htmlFor="customCheckRegister"
                               >
                                 <span>
                                   I agree with the{" "}
                                   <a
-                                    href="#pablo"
-                                    onClick={e => e.preventDefault()}
+                                      href="#pablo"
+                                      onClick={e => e.preventDefault()}
                                   >
                                     Privacy Policy
                                   </a>
@@ -173,9 +155,9 @@ class Register extends React.Component {
                         </Row>
                         <div className="text-center">
                           <Button
-                            className="mt-4"
-                            color="primary"
-                            type="button"
+                              className="mt-4"
+                              color="primary"
+                              type="button"
                           >
                             Create account
                           </Button>
@@ -188,10 +170,9 @@ class Register extends React.Component {
             </Container>
           </section>
         </main>
-        <SimpleFooter />
+        <SimpleFooter/>
       </>
-    );
-  }
+  );
 }
 
 export default Register;

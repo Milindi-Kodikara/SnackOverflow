@@ -18,10 +18,9 @@
 import React from "react";
 
 // reactstrap components
-import { Container, Row } from "reactstrap";
+import {Container, Row} from "reactstrap";
 
 // core components
-import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import CardsFooter from "components/Footers/CardsFooter.js";
 
 // index page sections
@@ -55,7 +54,6 @@ class Index extends React.Component {
   render() {
     return (
       <>
-        <DemoNavbar />
         <main ref="main">
           <Hero />
           <Buttons />
