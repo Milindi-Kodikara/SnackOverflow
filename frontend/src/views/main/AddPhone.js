@@ -31,7 +31,7 @@ export default function AddPhone() {
     const [phoneNumber, setPhoneNumber] = useState('');
     return (
         <>
-            {user?.phoneNumber && <Redirect to='tutors'/>}
+            {user?.phoneNumber && <Redirect to='/tutors'/>}
             <main>
                 <section className="section section-shaped section-lg">
                     <Container className="pt-lg-7">
@@ -104,6 +104,7 @@ export default function AddPhone() {
                                                                 return phoneNumber.replace(char, '')
                                                             }, phoneNumber
                                                         )).then(() => window.alert("Success! We'll send you a text shortly confirming your signup to TuteBite!"));
+
                                                         history.push('/tutors');
 
                                                     }}

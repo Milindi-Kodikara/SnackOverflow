@@ -11,7 +11,7 @@ export default function Login() {
   const user=useSession();
   return (
       <>
-        {user&&<Redirect to={'/tutors'}/>}
+        {user&&<Redirect to={'/add-phone'}/>}
         <main>
           <section className="section section-shaped section-lg">
 

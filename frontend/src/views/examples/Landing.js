@@ -1,36 +1,17 @@
 import React, {useState} from "react";
 import {Link} from 'react-router-dom';
 // nodejs library that concatenates classes
-import classnames from "classnames";
-import promo from '../../assets/img/promo.svg'
 // reactstrap components
-import {
-  Badge,
-  Button,
-  Card,
-  CardBody,
-  Col,
-  Container,
-  FormGroup,
-  Input,
-  InputGroup,
-  InputGroupAddon,
-  InputGroupText,
-  Row
-} from "reactstrap";
+import {Badge, Button, Card, CardBody, Col, Container, Row} from "reactstrap";
 import '../../assets/css/animation-register.css';
 
 
 // core components
-
 // index page sections
-import Download from "../IndexSections/Download.js";
 import {ReactComponent as Logo} from "../../assets/img/logo.svg";
 import SimpleFooter from "../../components/Footers/SimpleFooter";
 
 function Landing(){
-  const [nameFocused,setNameFocused] = useState(false);
-  const [emailFocused,setEmailFocused] = useState(false);
   return (
       <>
         <main>
@@ -294,13 +275,11 @@ function Landing(){
                             Awesome Support
                           </h5>
                           <p>
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
+                            With a text messaging system built in, you're only a DM away from personalised help from our tutors
                           </p>
                           <a
                               className="text-success"
-                              href="#pablo"
+                              href="#learn-more"
                               onClick={e => e.preventDefault()}
                           >
                             Learn more
@@ -319,16 +298,14 @@ function Landing(){
                         </div>
                         <div className="pl-4">
                           <h5 className="title text-warning">
-                            Modular Components
+                            Homework tracker (coming soon!)
                           </h5>
                           <p>
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
+                           With our homework tracker, stay on top of your work by sharing with your tutors your homework schedule, while also allowing themselves to add tasks.
                           </p>
                           <a
                               className="text-warning"
-                              href="#pablo"
+                              href="#learn-more"
                               onClick={e => e.preventDefault()}
                           >
                             Learn more
@@ -373,13 +350,13 @@ function Landing(){
                     <img
                         alt="..."
                         className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                        src={require("assets/img/theme/team-1-800x800.jpg")}
+                        src={require("assets/img/team/st.png")}
                         style={{ width: "200px" }}
                     />
                     <div className="pt-4 text-center">
                       <h5 className="title">
-                        <span className="d-block mb-1">Ryan Tompson</span>
-                        <small className="h6 text-muted">Web Developer</small>
+                        <span className="d-block mb-1">Stephanie Choo</span>
+                        <small className="h6 text-muted">Backend Deveoper (Python, Flask & Twilio)</small>
                       </h5>
 
                     </div>
@@ -390,12 +367,12 @@ function Landing(){
                     <img
                         alt="..."
                         className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                        src={require("assets/img/theme/team-2-800x800.jpg")}
+                        src={require("assets/img/team/mil.jpg")}
                         style={{ width: "200px" }}
                     />
                     <div className="pt-4 text-center">
                       <h5 className="title">
-                        <span className="d-block mb-1">Romina Hadid</span>
+                        <span className="d-block mb-1">Milindi Kodikara</span>
                         <small className="h6 text-muted">
                           Marketing Strategist
                         </small>
@@ -409,13 +386,13 @@ function Landing(){
                     <img
                         alt="..."
                         className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                        src={require("assets/img/theme/team-3-800x800.jpg")}
+                        src={require("assets/img/team/shar.jpg")}
                         style={{ width: "200px" }}
                     />
                     <div className="pt-4 text-center">
                       <h5 className="title">
-                        <span className="d-block mb-1">Alexander Smith</span>
-                        <small className="h6 text-muted">UI/UX Designer</small>
+                        <span className="d-block mb-1">Shaharzad Rafezi</span>
+                        <small className="h6 text-muted">UI/UX Designer, Pitch Presenter</small>
                       </h5>
                       
                     </div>
@@ -426,40 +403,14 @@ function Landing(){
                     <img
                         alt="..."
                         className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                        src={require("assets/img/theme/team-4-800x800.jpg")}
+                        src={require("assets/img/team/ry.jpg")}
                         style={{ width: "200px" }}
                     />
                     <div className="pt-4 text-center">
                       <h5 className="title">
-                        <span className="d-block mb-1">John Doe</span>
-                        <small className="h6 text-muted">Founder and CEO</small>
+                        <span className="d-block mb-1">Ryan Samarakoon</span>
+                        <small className="h6 text-muted">Frontend Developer</small>
                       </h5>
-                      <div className="mt-3">
-                        <Button
-                            className="btn-icon-only rounded-circle"
-                            color="success"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-twitter" />
-                        </Button>
-                        <Button
-                            className="btn-icon-only rounded-circle ml-1"
-                            color="success"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-facebook" />
-                        </Button>
-                        <Button
-                            className="btn-icon-only rounded-circle ml-1"
-                            color="success"
-                            href="#pablo"
-                            onClick={e => e.preventDefault()}
-                        >
-                          <i className="fa fa-dribbble" />
-                        </Button>
-                      </div>
                     </div>
                   </div>
                 </Col>
